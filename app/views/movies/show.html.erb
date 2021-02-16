@@ -1,0 +1,11 @@
+<h1><%= @movie.title %></h1>
+
+<p><b>Total gross</b></p>
+<p><%= @movie.total_gross %></p>
+<p><b>Description</b></p>
+<p><%= @movie.description %>/<p>
+<p><b>Premiere</b></p>
+<p>(<%= @movie.premiere %>)
+    <%= time_ago_in_words(@movie.premiere) %>
+<p>
+<p><%= @movie.premiere.to_s(:release_date) %></p>

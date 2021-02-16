@@ -1,0 +1,28 @@
+<h1><%=pluralize(@movies.size, "Movie" )%></h1>
+
+<table>
+  <tr>
+    
+    <th>Title</th>
+    <th>Total gross</th>
+    <th>Description</th>
+    <th>Time pass from premiere</th>
+    <th>Premiere</th>
+  </tr>
+
+<% @movies.each do |movie|%>
+  <tr>
+    <td><%= movie.title %></td>
+    <td><%= format_total_gross(movie) %></td>
+    <td><%= truncate(movie.description, length:40, separator:(' ')) %></td>
+    <td>(<%= movie.premiere %>)
+        <%= time_ago_in_words(movie.premiere) %>
+    </td>
+    <td><%= movie.premiere.to_s(:release_date) %></td>
+    
+  </tr>
+</table>
+<hr>
+
+<% end %>
+
