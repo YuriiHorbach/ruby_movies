@@ -9,3 +9,6 @@
     <%= time_ago_in_words(@movie.premiere) %>
 <p>
 <p><%= @movie.premiere.to_s(:release_date) %></p>
+
+
+<%= link_to("All Movies", movies_path) %>
