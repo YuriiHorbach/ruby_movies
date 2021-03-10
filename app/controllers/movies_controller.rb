@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   
   def index
     # @movies = ['Iron man', 'Superman', 'Spider-man', 'Ant-man']
-    @movies = Movie.all
+    @movies = Movie.released
   end
 
   def show
@@ -39,5 +39,5 @@ end
 private
 
   def movie_params
-    params.require(:movie).permit(:title, :rating, :total_gross, :premiere, :description)
+    params.require(:movie).permit(:title, :rating, :total_gross, :premiere, :description, :cast, :director, :duration, :image_file_name)
   end
