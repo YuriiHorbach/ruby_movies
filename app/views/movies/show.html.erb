@@ -1,18 +1,19 @@
-
-<%= image_for(@movie) %>
-<h1><%= @movie.title %></h1>
-
-<p><b>Total gross</b></p>
-<p><%= @movie.total_gross %></p>
-<p><b>Description</b></p>
-<p><%= @movie.description %>/<p>
-<p><b>Premiere</b></p>
-<p>(<%= @movie.premiere %>)
-    <%= time_ago_in_words(@movie.premiere) %>
-<p>
-<p><%= @movie.premiere.to_s(:release_date) %></p>
-
-
-<%= link_to("All Movies", root_path) %>
-<%= link_to("Edit", edit_movie_path(@movie.id))%>
-<%= link_to("Delete", movie_path(@movie.id), method: :delete, data:"Are you realy want to delete?")%>
+<article class="movie">
+    
+    <%= image_for(@movie) %>
+    <h1><%= @movie.title %></h1>
+    
+    <p><b>Total gross</b></p>
+    <p><%= @movie.total_gross %></p>
+    <p><b>Description</b></p>
+    <p><%= @movie.description %>/<p>
+    <p><b>Premiere</b></p>
+    <p>(<%= @movie.premiere %>)
+        <%= time_ago_in_words(@movie.premiere) %>
+    <p>
+    <p><%= @movie.premiere.to_s(:release_date) %></p>
+    
+    
+    <%= link_to("Edit", edit_movie_path(@movie.id))%>
+    <%= link_to("Delete", movie_path(@movie.id), method: :delete, data:"Are you realy want to delete?")%>
+</article>

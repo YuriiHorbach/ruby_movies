@@ -1,20 +1,22 @@
-
-<h1><%=pluralize(@movies.size, "Movie" )%></h1>
-
-
-<% @movies.each do |movie|%>
-  <%= image_for(movie) %>
-
-  <p><%= link_to(movie.title, movie )%></p>
-  <p><%= format_total_gross(movie) %></p>
-  <p><%= truncate(movie.description, length:40, separator:(' ')) %></p>
-  <p>(<%= movie.premiere %>)</p>
-  <p><%= time_ago_in_words(movie.premiere) %></p>
-  <p><%= movie.premiere.to_s(:release_date) %></p>
- 
-<hr>
-
-<% end %>
-
-<%= link_to "Create", new_movie_path %>
+<article class="movies">
+  
+  <h1><%=pluralize(@movies.size, "Movie" )%></h1>
+  
+  
+  <% @movies.each do |movie|%>
+    <%= image_for(movie) %>
+  
+    <p><%= link_to(movie.title, movie )%></p>
+    <p><%= format_total_gross(movie) %></p>
+    <p><%= truncate(movie.description, length:40, separator:(' ')) %></p>
+    <p>(<%= movie.premiere %>)</p>
+    <p><%= time_ago_in_words(movie.premiere) %></p>
+    <p><%= movie.premiere.to_s(:release_date) %></p>
+  
+  <hr>
+  
+  <% end %>
+  
+  <%= link_to "Create", new_movie_path %>
+</article>
 
